@@ -22,6 +22,15 @@
             </intent-filter>
         </activity>
         <activity android:name=".CreateNotification" />
+
+        <receiver
+            android:name=".MyReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
+        <service
+            android:name=".MyIntentService"
+            android:exported="false"></service>
     </application>
 
 </manifest>
