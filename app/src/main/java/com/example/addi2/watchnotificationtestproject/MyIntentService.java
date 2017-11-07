@@ -66,15 +66,7 @@ public class MyIntentService extends IntentService {
         //description of intent and action to preforme with it
         pendingIntent = PendingIntent.getBroadcast(this, 0, messageIntent, 0);
 
-        //TODO random selection of notification content from local storage
-        final int min = 0;
-        final int max = 2;
-        Random random = new Random();
-        int randomNum = random.nextInt((max - min) + 1) + min;
-        String [] list=new String[]{"TIPS 1","TIPS 2","TIPS 3"};
-
-        notification = new NewMessageNotification();
-        notification.notify(this,list[randomNum],1);
+        createNotification();
 
         AlarmManager manager = (AlarmManager) getSystemService(this.ALARM_SERVICE);
         //every 10 min, change last var to adjust this
@@ -88,5 +80,17 @@ public class MyIntentService extends IntentService {
     //cancel broadcast, flag makes sure it is canceled if it exist
     protected void CancelBroadcast() {
         PendingIntent.getBroadcast(this, 0, messageIntent, PendingIntent.FLAG_UPDATE_CURRENT).cancel();
+    }
+
+    private void createNotification(){
+        //TODO random selection of notification content from local storage
+        final int min = 0;
+        final int max = 2;
+        Random random = new Random();
+        int randomNum = random.nextInt((max - min) + 1) + min;
+        String [] list=new String[]{"TIPS 1","TIPS 2","TIPS 3"};
+
+        notification = new NewMessageNotification();
+        notification.notify(this,list[randomNum],1);
     }
 }

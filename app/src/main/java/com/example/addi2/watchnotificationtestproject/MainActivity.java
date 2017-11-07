@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
          So i might have to change the description above startNotification and in myIntentService. since this service is declated in
          the manifest file (automaticaly when created in android studio, i can add several broadcasts to a queue, but on stop removes
-         them all? 
+         them all?
          */
         // TODO does it start several broadcasters -> testable easy enough
     }
