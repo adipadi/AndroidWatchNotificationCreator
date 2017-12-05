@@ -64,8 +64,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void StopNotifications(View view){
        MyIntentService.myIntentService.CancelBroadcast();
-        //TODO stop the service?
-        //TODO does startNotificaiton start several services _> check prosse
         /*
         Services of the same manifest declaration i.e. service name=".MyIntentService"
         (and this is the same for normal Services) run as a singleton within their process,
@@ -75,9 +73,12 @@ public class MainActivity extends AppCompatActivity {
          the manifest file (automaticaly when created in android studio, i can add several broadcasts to a queue, but on stop removes
          them all?
          */
-        // TODO does it start several broadcasters -> testable easy enough
     }
 
+    //TODO implement two presets, one for conversation and one for personal improvment. Should be able to add questions to this two categories, and remove old ones
+    //maybe focus on one category for a week and be able to rate your own progress on them by some form (text, smileys)
+
+    //TODO implement a custom creator where you can make your own category, with time intervals and questions
 
 
     //----------------Menu related-------------------------------------------
